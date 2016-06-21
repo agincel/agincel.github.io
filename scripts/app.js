@@ -2,7 +2,7 @@ var app = angular.module('page', []);
 var tryJson = false;
 
 app.controller('PageController', ['$http', function($http) {
-	this.value = 2;
+	this.value = 1;
 	this.selectedItem = 0;
 	this.selectedScreenshot = 0;
 	this.desiredType = "Game";
