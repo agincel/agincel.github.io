@@ -257,6 +257,15 @@ function getItems($http)
 				"screenshots": ["./images/items/test2/screenshot.png"],
 				"links": [{"text": "See live information!", "link": "http://adamgincel.com/programming/atbstats.html"}, {"text": "View the source!", "link": "https://github.com/agincel/AdamTestBot"}],
 			},
+			{
+				"type": ,
+				"title": ,
+				"time": ,
+				"thumbnail": ,
+				"description": ,
+				"screenshots": [],
+				"links": [],
+			},
 			/*{
 				"type": ,
 				"title": ,
