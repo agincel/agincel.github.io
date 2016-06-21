@@ -1,0 +1,23 @@
+<!-- Main component for a primary marketing message or call to action -->
+<div class="jumbotron jumbotron-custom">
+	<div ng-show="pgCtrl.valueIsInArray([1,3,5])">
+		<h1 style="font-family: 'Yanone Kaffeesatz', arial, sans-serif;">{{pgCtrl.pageContents.data[pgCtrl.valueMap[pgCtrl.value]].title}}</h1>
+		<br/>
+		<p ng-repeat="contents in pgCtrl.pageContents.data[pgCtrl.valueMap[pgCtrl.value]].content">{{contents}}</p>
+	</div>
+
+	<div ng-show="pgCtrl.valueIsInArray([2, 4])" style="text-align: center;">
+			<h1 style="font-family: 'Yanone Kaffeesatz', arial, sans-serif;">
+				{{pgCtrl.pageContents.data[pgCtrl.valueMap[pgCtrl.value]].title}}
+			</h1>
+			<br/>
+			<p ng-repeat="contents in pgCtrl.pageContents.data[pgCtrl.valueMap[pgCtrl.value]].content" style="font-size: 14px;">{{contents}}</p>
+
+			<!-- Item To Display -->
+			<item-on-display></item-on-display>
+
+			<h2>Select a {{pgCtrl.desiredType}} to View Details</h2>
+			<!-- Item Gallery -->
+			<item-gallery></item-gallery>
+	</div>
+</div>
