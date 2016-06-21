@@ -50,7 +50,7 @@ app.controller('PageController', ['$http', function($http) {
 
 	this.pageContents = getPageContents($http);
 	//this.items = getItems($http);
-	$http.get('./json/pageContents.json').then(function(data){
+	$http.get('http://rawgit.com/agincel/agincel.github.io/master/test/json/pageContents.json').then(function(data){
 				this.items = data;
 				console.log("Got items.");
 		});
