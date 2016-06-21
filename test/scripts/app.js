@@ -48,9 +48,9 @@ app.controller('PageController', ['$http', function($http) {
 
 	this.valueMap = getValueMap();
 
-	this.pageContents = getPageContents($http);
+	this.pageContents = getPageContents();
 	//this.items = getItems($http);
-	$http.get('./json/pageContents.json').success(function(data){
+	$http.get('./json/pageContents.json').then(function(data){
 				this.items = data;
 				console.log("Got items.");
 		});
@@ -128,7 +128,7 @@ function getPageContents($http)
 		});
 		console.log("JSON did not succeed.");
 	}
-
+	return {};
 	return {
 		"data": [
 			{"title": "Adam Gincel's Repository", "content": ["My name is Adam Gincel; I'm a Computer Science undergraduate student attending Stevens Institute of Technology. I program, write music, and make games. This website is a repository for some of my work. Thank you for visiting!"]},
