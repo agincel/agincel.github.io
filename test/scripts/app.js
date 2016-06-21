@@ -49,7 +49,11 @@ app.controller('PageController', ['$http', function($http) {
 	this.valueMap = getValueMap();
 
 	this.pageContents = getPageContents($http);
-	this.items = getItems($http);
+	//this.items = getItems($http);
+	$http.get('./json/pageContents.json').success(function(data){
+				this.items = data;
+				console.log("Got items.");
+		});
 }]);
 
 
