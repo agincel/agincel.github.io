@@ -1,5 +1,5 @@
 var app = angular.module('page', []);
-var tryJson = true;
+var tryJson = false;
 
 app.controller('PageController', ['$http', function($http) {
 	this.value = 2;
