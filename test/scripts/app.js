@@ -1,5 +1,5 @@
 var app = angular.module('page', []);
-var tryJson = false;
+var tryJson = true;
 
 app.controller('PageController', ['$http', function($http) {
 	this.value = 2;
@@ -92,11 +92,11 @@ app.directive('itemGallery', function(){
 function getNavbarDropdownMembers()
 {
 	return [];
-	return [
+	/*return [
 		{link:'#', display: 'Action', value: 10},
 		{link:'#', display: 'Another Action', value: 11},
 		{link:'#', display: 'Something Else', value: 12}
-	];
+	];*/
 }
 
 function getNavbarMembers()
@@ -148,7 +148,7 @@ function getItems($http)
 		});
 		console.log("JSON did not succeed.");
 	}
-
+	return {};
 	return {
 		"data": [
 			{
