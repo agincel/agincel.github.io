@@ -1,19 +1,19 @@
 <!-- Item on Display -->
-<div style="border: 1px black solid; border-radius: .5em; text-align: left; width: 80%; margin-top: 20px; margin-bottom: 30px; margin-left: auto; margin-right: auto;">
+<div id="displayed-item">
 
 	<!-- Heading -->
-	<h2 style="padding-left: 5%; margin-bottom: 20px; min-width: 25%; max-width: 50%;" class="pull-left">{{pgCtrl.items.data[pgCtrl.selectedItem].title}}</h2>
-	<h3 class="pull-right" style="padding-top: 1%; padding-right: 5%; margin-bottom: 20px; max-width: 50%; text-align: right;">{{pgCtrl.items.data[pgCtrl.selectedItem].time}}</h3>
+	<h2 id="displayed-item-heading-name">{{pgCtrl.items.data[pgCtrl.selectedItem].title}}</h2>
+	<h3 id="displayed-item-heading-time">{{pgCtrl.items.data[pgCtrl.selectedItem].time}}</h3>
 
 	<!-- Main Screenshot -->
-	<div style="width: 60%; height: auto; margin: 0px auto 20px; padding: 10px;">
+	<div id="displayed-item-main-screenshot">
 		<img ng-src="{{pgCtrl.items.data[pgCtrl.selectedItem].screenshots[pgCtrl.selectedScreenshot]}}" style="width: 100%; height: auto; border: 1px solid black;"></img>
 	</div>
 
 	<!-- Screenshot Gallery -->
-	<div style="width: 80%; padding: 10px; margin-left: auto; margin-right: auto; overflow: hidden; text-align: center;" ng-show="pgCtrl.items.data[pgCtrl.selectedItem].screenshots.length > 1">
+	<div id="displayed-item-screenshot-gallery" ng-show="pgCtrl.items.data[pgCtrl.selectedItem].screenshots.length > 1">
 		<ul style="margin: 0px auto 10px; width: 100%; padding: 0px; list-style: none; position: relative; float: left; display: block;">
-			<li style="position: relative; border: 0px none; margin-left: 12.5px; margin-right: 12.5px; width: 25%; height: auto; display: inline-block; margin-bottom: 20px;" ng-repeat="image in pgCtrl.items.data[pgCtrl.selectedItem].screenshots track by $index">
+			<li style="position: relative; border: 0px none; margin-left: 2%; margin-right: 2%; width: 25%; height: auto; display: inline-block; margin-bottom: 20px;" ng-repeat="image in pgCtrl.items.data[pgCtrl.selectedItem].screenshots track by $index">
 				<img ng-src="{{image}}" 
 					style="width: 100%; height: 100%; border: 1px solid black;" 
 					ng-class="{'selected-image': pgCtrl.selectedScreenshot == $index}" 
@@ -24,8 +24,9 @@
 
 	<!-- Description -->
 	<div style="margin-left: auto; margin-right: auto; text-align: center;">
-		<h3>Description</h3>
-		<p style="padding-bottom: 0px; padding-left: 10px; padding-right: 10px; font-size: 16px;">{{pgCtrl.items.data[pgCtrl.selectedItem].description}}</p>
+		<h3 style="margin-top: 0px; font-size: 26px;">Description</h3>
+		<p id="displayed-item-description">
+			{{pgCtrl.items.data[pgCtrl.selectedItem].description}}</p>
 	</div>
 
 	<!-- Links -->

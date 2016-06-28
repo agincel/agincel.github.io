@@ -20,6 +20,8 @@
 	<link rel="stylesheet" type="text/css" href="./style/style.css" />
 
 	<!-- My Scripts -->
+	<script src="./scripts/items.js"></script>
+	<script src="./scripts/page.js"></script>
 	<script src="./scripts/app.js"></script>
 
 	<title>Adam Gincel</title>
@@ -28,7 +30,7 @@
 
 </head>
 
-<body ng-controller="PageController as pgCtrl">
+<body ng-controller="PageController as pgCtrl" ng-init="pgCtrl.checkPage();">
 	<navbar></navbar>
 
     <div class="container">

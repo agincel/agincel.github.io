@@ -1,6 +1,5 @@
 body {
 	background: #F7F7F7 url('../images/triangular.png') fixed;
-	min-height: 1200px;
 	padding-top: 70px;
 }
 
@@ -11,18 +10,148 @@ body {
 
 .navbar-custom {
 	background-image: none;
-	background-color: rgba(255, 255, 255, 0.85);
-	width: 92.5%;
+	background-color: rgba(255, 255, 255, .98);
+	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
-	border-radius: 0.5em;
+	border-radius: 0em;
 }
 
 .jumbotron-custom {
-	background-color: rgba(255, 255, 255, 0.65);
+	background-color: rgba(255, 255, 255, 0);
+	border-radius: 0em !important;
 	padding-top: 10px;
 }
 
 .selected-image {
 	border: 2px solid black !important;
+}
+
+#displayed-item {
+	border: 1px black solid; 
+	border-radius: .25em; 
+	text-align: left; 
+	width: 80%; 
+	margin-top: 20px; 
+	margin-bottom: 30px; 
+	margin-left: auto; 
+	margin-right: auto;
+}
+
+#displayed-item-heading-name {
+	padding-left: 5%; 
+	margin-bottom: 20px; 
+	width: 50%; 
+	font-size: 34px;
+	float: left;
+}
+
+#displayed-item-heading-time {
+	padding-top: 1%; 
+	padding-right: 5%; 
+	margin-bottom: 20px; 
+	width: 50%; 
+	text-align: right; 
+	font-size: 26px;
+	float: left;
+}
+
+#displayed-item-main-screenshot {
+	width: 60%; 
+	height: auto; 
+	margin: 0px auto 20px; 
+	padding: 10px;
+}
+
+#displayed-item-screenshot-gallery {
+	width: 80%; 
+	padding: 10px; 
+	margin-left: auto; 
+	margin-right: auto; 
+	overflow: hidden; 
+	text-align: center;
+}
+
+#displayed-item-description {
+	padding-bottom: 0px; 
+	padding-left: 10px; 
+	padding-right: 10px; 
+	font-size: 18px;
+}
+
+#gallery-list {
+	width: 100%; 
+	margin: 0px auto 10px; 
+	padding: 0px; 
+	list-style: none; 
+	position: relative; 
+	display: block; 
+	text-align: center;
+}
+
+#gallery-list li {
+	position: relative; 
+	border: 0px none; 
+	margin-left: 2%; 
+	margin-right: 2%; 
+	width: 20%; 
+	height: auto; 
+	display: inline-block; 
+	margin-bottom: 4%;
+}
+
+#gallery-list li div {
+	border: 1px black solid; 
+	border-radius: .25em; 
+	margin-top: 10px; 
+	margin-left: auto; 
+	margin-right: auto; 
+	width: 100%;
+}
+
+#gallery-list li div h2 {
+	font-size: 18px; 
+	padding: 0px; 
+	padding-top: 0.5%; 
+	margin: 3%;
+}
+
+
+@media only screen and (max-width: 580px) {
+	/* phones */
+	#displayed-item-heading-name {
+		padding-left: 0%;
+		margin-bottom: 4px;
+		width: 100%;
+		text-align: center;
+	}
+	#displayed-item-heading-time{
+		font-size: 20px;
+		padding-right: 0%;
+		padding-top: 0px;
+		margin-top: 0px;
+		width: 100%;
+		text-align: center;
+	}
+
+	#gallery-list li {
+		position: relative; 
+		border: 0px none; 
+		margin-left: 0%; 
+		margin-right: 0%; 
+		width: 55%; 
+		height: auto; 
+		display: inline-block; 
+		margin-bottom: 10px;
+	}
+
+	#displayed-item-description {
+		min-height: 14em; 
+		font-size: 12px;
+	}
+
+	#displayed-item-screenshot-gallery {
+		display: none;
+	}
+
 }
