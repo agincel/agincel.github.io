@@ -13,7 +13,7 @@
 	<!-- Screenshot Gallery -->
 	<div id="displayed-item-screenshot-gallery" ng-show="pgCtrl.items.data[pgCtrl.selectedItem].screenshots.length > 1">
 		<ul style="margin: 0px auto 10px; width: 100%; padding: 0px; list-style: none; position: relative; float: left; display: block;">
-			<li style="position: relative; border: 0px none; margin-left: 2%; margin-right: 2%; width: 25%; height: auto; display: inline-block; margin-bottom: 20px;" ng-repeat="image in pgCtrl.items.data[pgCtrl.selectedItem].screenshots track by $index">
+			<li style="position: relative; border: 0px none; margin-left: 2%; margin-right: 2%; width: 17%; height: auto; display: inline-block; margin-bottom: 20px;" ng-repeat="image in pgCtrl.items.data[pgCtrl.selectedItem].screenshots track by $index">
 				<img ng-src="{{image}}" 
 					style="width: 100%; height: 100%; border: 1px solid black;" 
 					ng-class="{'selected-image': pgCtrl.selectedScreenshot == $index}" 
@@ -24,7 +24,7 @@
 
 	<!-- Description -->
 	<div style="margin-left: auto; margin-right: auto; text-align: center;">
-		<h3 style="margin-top: 0px; font-size: 26px;">Description</h3>
+		<h3 style="margin-top: 0px; font-size: 27px;">Description</h3>
 		<p id="displayed-item-description">
 			{{pgCtrl.items.data[pgCtrl.selectedItem].description}}</p>
 	</div>

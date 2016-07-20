@@ -85,7 +85,7 @@ app.controller('PageController', ['$http', function($http) {
 		this.selectedScreenshot = 0;
 		this.selectedItem = i;
 
-		console.log("hello");
+		scroll(0, 100);
 
 		var currentHash = window.location.hash;
 		currentHash = currentHash.split("&")[0];
