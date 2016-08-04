@@ -28,6 +28,7 @@ body {
 .jumbotron-custom h1 {
 	padding: 0px;
 	margin: 0px;
+	font-family: 'Yanone Kaffeesatz', arial, sans-serif;
 }
 
 .selected-image {
@@ -66,9 +67,9 @@ body {
 }
 
 #displayed-item-main-screenshot {
-	width: 45%; 
+	width: 40%; 
 	height: auto; 
-	margin: 0px auto 20px; 
+	margin: 0px auto 10px; 
 	padding: 10px;
 }
 
@@ -101,12 +102,12 @@ body {
 #gallery-list li {
 	position: relative; 
 	border: 0px none; 
-	margin-left: 2%; 
-	margin-right: 2%; 
-	width: 20%; 
+	margin-left: 1%; 
+	margin-right: 1%; 
+	width: 12%; 
 	height: auto; 
 	display: inline-block; 
-	margin-bottom: 4%;
+	margin-bottom: 2%;
 }
 
 #gallery-list li div {
@@ -119,10 +120,35 @@ body {
 }
 
 #gallery-list li div h2 {
-	font-size: 18px; 
+	font-size: 14px; 
 	padding: 0px; 
 	padding-top: 0.5%; 
 	margin: 3%;
+}
+
+.centered-horizontal-list {
+	width: 100%; 
+	margin: 0px auto 10px; 
+	padding: 0px; 
+	list-style: none; 
+	position: relative; 
+	display: block; 
+	text-align: center;
+}
+
+.centered-horizontal-list li {
+	position: relative; 
+	border: 0px none; 
+	margin-left: 2%; 
+	margin-right: 2%; 
+	height: auto; 
+	display: inline-block; 
+	margin-bottom: 2%;
+}
+
+.centered-horizontal-list li img {
+	height: 100px;
+	width: auto;
 }
 
 

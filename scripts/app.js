@@ -2,7 +2,7 @@ var app = angular.module('page', []);
 var tryJson = false;
 
 app.controller('PageController', ['$http', function($http) {
-	this.value = 1;
+	this.value = 0;
 	this.selectedItem = 0;
 	this.selectedScreenshot = 0;
 	this.desiredType = "Game";
@@ -11,10 +11,10 @@ app.controller('PageController', ['$http', function($http) {
 	this.dropdownMembers = getNavbarDropdownMembers();
 	this.navMembers = getNavbarMembers();
 
-	this.valueMap = getValueMap();
-
 	this.pageContents = getPageContents();
 	this.items = getItems();
+
+	this.contactLinks = getContactLinks();
 
 	this.checkPage = function (){
 		var url = window.location.href;
@@ -23,11 +23,10 @@ app.controller('PageController', ['$http', function($http) {
 		var newPageName = "";
 		for (var i = 0; pieces.length > 1 && i < this.navMembers.length; i++) {	
 			var pageName = pieces[1].split("&")[0];
-			console.log(pageName);
 
-			if(pageName.toLowerCase() == this.navMembers[i].display.toLowerCase()) {
-				this.value = this.navMembers[i].value;
-				newPageName += this.navMembers[i].display.toLowerCase();
+			if(pageName.toLowerCase() == this.navMembers[i].toLowerCase()) {
+				this.value = i;
+				newPageName += this.navMembers[i].toLowerCase();
 				var frag = pieces[1].split("&");
 				if(frag.length > 1) {
 					for(var j = 0; j < this.items.data.length; j++) {
@@ -37,11 +36,12 @@ app.controller('PageController', ['$http', function($http) {
 						}	
 					}
 				}
-
-				if (i == 1)
+				if (this.value == 1)
 					this.desiredType = "Game";
-				else
+				else {
 					this.desiredType = "Project";
+					this.selectedItem = 8;
+				}
 			}
 			if (newPageName != "")
 				window.location.hash = newPageName;
@@ -54,22 +54,19 @@ app.controller('PageController', ['$http', function($http) {
 			this.value = v;
 			this.selectedItem = 0;
 			this.selectedScreenshot = 0;
+			this.desiredType = "Game";
 
-			if (this.value == 2)
-			{
-				this.desiredType = "Game";
-			}
-			else if (this.value == 4)
+			if (this.value == 3)
 			{
 				this.desiredType = "Project";
 				this.selectedItem = 8;
 			}
 
-			for(var i = 0; i < this.navMembers.length; i++) {
-				if (v == this.navMembers[i].value) {
-					window.location.hash = this.navMembers[i].display.toLowerCase();
-				}
+			for(var i = 0; i < this.navMembers.length; i++) { /* update page hash */
+				if (v == i) 
+					window.location.hash = this.navMembers[i].toLowerCase();
 			}
+
 		}
 	};
 	this.valueIsInArray = function(v){
@@ -80,16 +77,19 @@ app.controller('PageController', ['$http', function($http) {
 		}
 		return false;
 	};
+	this.valueIs = function (v) {
+		return this.value === v;
+	}
 
 	this.setSelectedItem = function(i) {
 		this.selectedScreenshot = 0;
 		this.selectedItem = i;
 
-		scroll(0, 100);
+		scroll(0, 100); /* scroll to approximate top of game display */
 
 		var currentHash = window.location.hash;
 		currentHash = currentHash.split("&")[0];
-		currentHash += "&" + this.items.data[i].shortName;
+		currentHash += "&" + this.items.data[i].shortName; /* set shortname */
 		window.location.hash = currentHash;
 	};
 
