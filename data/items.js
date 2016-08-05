@@ -58,7 +58,7 @@ function getItems()
 				time: "SGDC Game Jam III",
 				thumbnail: "./images/items/WeGuys/thumb.png",
 				description: "A co-op platformer inspired by I Wanna Be the Guy created for Game Jam III, where the theme was \"global\". Built to be horrifically difficult, we have seen pairs of players threaten all sorts of things on each other and on us upon playing it. This was a good learning experience, as it was my first foray into UE4's 2D workflow.",
-				screenshots: ["./images/items/test2/screenshot.png"], 
+				screenshots: ["./images/items/WeGuys/s1.png", "./images/items/WeGuys/s2.png", "./images/items/WeGuys/s3.png", ], 
 				links: [{text: "Download here!", link: "http://1drv.ms/17c58IX"}],
 				shortName: "weguys",
 			},
