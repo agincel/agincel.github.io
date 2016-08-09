@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Paul's Piano Web</title>
+	
+	<link rel="stylesheet" type="text/css" href="style/style.css">
+
+	<script type="text/javascript">
+		function setVideo (name) {
+			var player = document.getElementById("v");
+			if (!player.src.endsWith("video/" + name) || player.ended) { //don't reload the same video multiple times
+				console.log(player.src);
+				player.src = "video/" + name;
+				player.load();
+				player.play();
+			}
+		}
+	</script>
+
+</head>
+<body style="overflow-y: hidden;">
+<article id="wrapper">
+	<section id="top">
+		<h1>Paul's Piano Web</h1>
+		<video id="v" controls>
+			<source src="video/test.mp4" type="video/mp4">
+		</video>
+	</section>
+	<div id="pianoWrapper">
+	<section id="piano">
+		<img src="img/KeyLeft.png" class="white c" onclick="setVideo('test.mp4')"/>
+			<img src="img/KeyBlack.png" class="black" onclick="setVideo('test2.mp4')"/>
+		<img src="img/KeyMiddle.png" class="white" onclick="setVideo('test.mp4')"/>
+			<img src="img/KeyBlack.png" class="black" onclick="setVideo('test2.mp4')"/>
+		<img src="img/KeyRight.png" class="white" onclick="setVideo('test.mp4')"/>
+		<img src="img/KeyLeft.png" class="white f" onclick="setVideo('test.mp4')"/>
+			<img src="img/KeyBlack.png" class="black" onclick="setVideo('test2.mp4')"/>
+		<img src="img/KeyMiddle.png" class="white" onclick="setVideo('test.mp4')"/>
+			<img src="img/KeyBlack.png" class="black" onclick="setVideo('test2.mp4')"/>
+		<img src="img/KeyMiddle.png" class="white" onclick="setVideo('test.mp4')"/>
+			<img src="img/KeyBlack.png" class="black" onclick="setVideo('test2.mp4')"/>
+		<img src="img/KeyRight.png" class="white" onclick="setVideo('test.mp4')"/>
+
+		<img src="img/KeyLeft.png" class="white c" onclick="setVideo('test.mp4')"/>
+			<img src="img/KeyBlack.png" class="black" onclick="setVideo('test2.mp4')"/>
+		<img src="img/KeyMiddle.png" class="white" onclick="setVideo('test.mp4')"/>
+			<img src="img/KeyBlack.png" class="black" onclick="setVideo('test2.mp4')"/>
+		<img src="img/KeyRight.png" class="white" onclick="setVideo('test.mp4')"/>
+		<img src="img/KeyLeft.png" class="white f" onclick="setVideo('test.mp4')"/>
+			<img src="img/KeyBlack.png" class="black" onclick="setVideo('test2.mp4')"/>
+		<img src="img/KeyMiddle.png" class="white" onclick="setVideo('test.mp4')"/>
+			<img src="img/KeyBlack.png" class="black" onclick="setVideo('test2.mp4')"/>
+		<img src="img/KeyMiddle.png" class="white" onclick="setVideo('test.mp4')"/>
+			<img src="img/KeyBlack.png" class="black" onclick="setVideo('test2.mp4')"/>
+		<img src="img/KeyRight.png" class="white" onclick="setVideo('test.mp4')"/>
+
+		<img src="img/KeyLeft.png" class="white c" onclick="setVideo('test.mp4')"/>
+			<img src="img/KeyBlack.png" class="black" onclick="setVideo('test2.mp4')"/>
+		<img src="img/KeyMiddle.png" class="white" onclick="setVideo('test.mp4')"/>
+			<img src="img/KeyBlack.png" class="black" onclick="setVideo('test2.mp4')"/>
+		<img src="img/KeyRight.png" class="white" onclick="setVideo('test.mp4')"/>
+		<img src="img/KeyLeft.png" class="white f" onclick="setVideo('test.mp4')"/>
+			<img src="img/KeyBlack.png" class="black" onclick="setVideo('test2.mp4')"/>
+		<img src="img/KeyMiddle.png" class="white" onclick="setVideo('test.mp4')"/>
+			<img src="img/KeyBlack.png" class="black" onclick="setVideo('test2.mp4')"/>
+		<img src="img/KeyMiddle.png" class="white" onclick="setVideo('test.mp4')"/>
+			<img src="img/KeyBlack.png" class="black" onclick="setVideo('test2.mp4')"/>
+		<img src="img/KeyRight.png" class="white" onclick="setVideo('test.mp4')"/>
+
+
+	</section>
+	</div>
+</article>
+</body>
+</html>
