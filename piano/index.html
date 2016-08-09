@@ -7,6 +7,13 @@
 	<link rel="stylesheet" type="text/css" href="style/style.css">
 
 	<script type="text/javascript">
+		window.onload = function () {
+			var player = document.getElementById("v");
+			player.src = "video/test.mp4";
+			player.style.maxWidth = player.videoWidth;
+		};
+
+
 		function setVideo (name) {
 			var player = document.getElementById("v");
 			if (!player.src.endsWith("video/" + name) || player.ended) { //don't reload the same video multiple times
@@ -68,6 +75,18 @@
 			<img src="img/KeyBlack.png" class="black" onclick="setVideo('test2.mp4')"/>
 		<img src="img/KeyRight.png" class="white" onclick="setVideo('test.mp4')"/>
 
+		<img src="img/KeyLeft.png" class="white c" onclick="setVideo('test.mp4')"/>
+			<img src="img/KeyBlack.png" class="black" onclick="setVideo('test2.mp4')"/>
+		<img src="img/KeyMiddle.png" class="white" onclick="setVideo('test.mp4')"/>
+			<img src="img/KeyBlack.png" class="black" onclick="setVideo('test2.mp4')"/>
+		<img src="img/KeyRight.png" class="white" onclick="setVideo('test.mp4')"/>
+		<img src="img/KeyLeft.png" class="white f" onclick="setVideo('test.mp4')"/>
+			<img src="img/KeyBlack.png" class="black" onclick="setVideo('test2.mp4')"/>
+		<img src="img/KeyMiddle.png" class="white" onclick="setVideo('test.mp4')"/>
+			<img src="img/KeyBlack.png" class="black" onclick="setVideo('test2.mp4')"/>
+		<img src="img/KeyMiddle.png" class="white" onclick="setVideo('test.mp4')"/>
+			<img src="img/KeyBlack.png" class="black" onclick="setVideo('test2.mp4')"/>
+		<img src="img/KeyRight.png" class="white" onclick="setVideo('test.mp4')"/>
 
 	</section>
 	</div>
