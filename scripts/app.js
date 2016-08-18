@@ -40,7 +40,7 @@ app.controller('PageController', ['$http', function($http) {
 					this.desiredType = "Game";
 				else {
 					this.desiredType = "Project";
-					this.selectedItem = 8;
+					this.selectedItem = 7;
 				}
 			}
 			if (newPageName != "")
@@ -59,7 +59,7 @@ app.controller('PageController', ['$http', function($http) {
 			if (this.value == 3)
 			{
 				this.desiredType = "Project";
-				this.selectedItem = 8;
+				this.selectedItem = 7;
 			}
 
 			for(var i = 0; i < this.navMembers.length; i++) { /* update page hash */

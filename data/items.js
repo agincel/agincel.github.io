@@ -86,7 +86,7 @@ function getItems()
 				type: "Project",
 				title: "Paul's Piano Web",
 				thumbnail: "./images/items/Piano/thumb.png",
-				description: "My brother Paul is two years younger than me and has Autism. We bonded over my piano playing, and I taught him how to ask for specific songs by hitting certain keys on the keyboard. As I was leaving for college we needed an alternative to listen to my piano playing while I was away, and Paul's Piano was born. It started as an iOS app, and now has a Web version for easier access.",
+				description: "My brother Paul is two years younger than me, and has Autism. We bonded over my piano playing, and I taught him how to ask for specific songs by hitting certain keys on the keyboard. As I was leaving for college we needed an alternative to listen to my piano playing while I was away, and Paul's Piano was born. It started as an iOS app, and now has a Web version for easier access.",
 				screenshots: ["./images/items/Piano/s1.png"],
 				links: [{text: "Try out Paul's Piano!", link: "http://adamgincel.com/piano"}],
 				shortName: "piano",
