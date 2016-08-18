@@ -40,7 +40,8 @@ app.controller('PageController', ['$http', function($http) {
 					this.desiredType = "Game";
 				else {
 					this.desiredType = "Project";
-					this.selectedItem = 7;
+					if (this.selectedItem == 0)
+						this.selectedItem = 7;
 				}
 			}
 			if (newPageName != "")
