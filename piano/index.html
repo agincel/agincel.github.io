@@ -7,16 +7,49 @@
 	<link rel="stylesheet" type="text/css" href="style/style.css">
 
 	<script type="text/javascript">
-		function setVideo (name) {
-			var player = document.getElementById("v");
-			if (!player.src.endsWith("video/" + name) || player.ended || player.paused) { //don't reload the same video multiple times
-				console.log(player.src);
-				player.src = "video/" + name;
-				player.load();
-				player.play();
-			} else {
-				player.currentTime = 0;
+	//load Youtube
+		var tag = document.createElement('script');
+
+		tag.src = "https://www.youtube.com/iframe_api";
+		var firstScriptTag = document.getElementsByTagName('script')[0];
+		firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      // 3. This function creates an <iframe> (and YouTube player)
+      //    after the API code downloads.
+		var player;
+		function onYouTubeIframeAPIReady() {
+				player = new YT.Player('player', {
+				height: '390',
+				width: '640',
+				videoId: 'OZzbXEqXMnI',
+				events: {
+					'onReady': onPlayerReady,
+					'onStateChange': onPlayerStateChange
+				}
+			});
+		}
+
+      // 4. The API will call this function when the video player is ready.
+		function onPlayerReady(event) {
+			//event.target.playVideo();
+		}
+
+      // 5. The API calls this function when the player's state changes.
+      //    The function indicates that when playing a video (state=1),
+      //    the player should play for six seconds and then stop.
+		var done = false;
+		function onPlayerStateChange(event) {
+			if (event.data == YT.PlayerState.PLAYING && !done) {
+				//setTimeout(stopVideo, 6000);
+				done = true;
 			}
+		}
+		function stopVideo() {
+			player.stopVideo();
+		}
+
+		function setVideo (name) {
+			player.loadVideoById(name, 0, 'small');
 		}
 	</script>
 
@@ -25,19 +58,24 @@
 <article id="wrapper">
 	<section id="top">
 		<h1>Paul's Piano Web</h1>
-		<video id="v" controls>
+		<!--<video id="v" controls>
 			<source src="video/test.mp4" type="video/mp4">
-		</video>
+		</video> -->
+		<div class="videoWrapper">
+			<!-- <iframe id="y" src="https://www.youtube.com/embed/OB8_wfxWSGs" frameborder="0" allowfullscreen modestbranding></iframe> -->
+			<div id="player"></div>
+		</div>
+
 	</section>
 	<div id="pianoWrapper">
 	<section id="piano">
-		<img src="img/KeyLeft.png" class="left white c" onclick="setVideo('Bonetrousle.mov')"/> <!-- C -->
-			<img src="img/KeyBlack.png" class="black" onclick="setVideo('MinuteWaltz.mov')"/> <!-- C# -->
-		<img src="img/KeyMiddle.png" class="middle white" onclick="setVideo('Megalovania.mov')"/> <!-- D -->
+		<img src="img/KeyLeft.png" class="left white c" onclick="setVideo('J4B4_UdqKGQ')"/> <!-- C -->
+			<img src="img/KeyBlack.png" class="black" onclick="setVideo('dB8Ft6ooL2Y')"/> <!-- C# -->
+		<img src="img/KeyMiddle.png" class="middle white" onclick="setVideo('OZzbXEqXMnI')"/> <!-- D -->
 			<img src="img/KeyBlack.png" class="black"> <!-- onclick="setVideo('test2.mp4')"/> D# -->
-		<img src="img/KeyRight.png" class="right white" onclick="setVideo('Tetris.mov')"/> <!-- E -->
-		<img src="img/KeyLeft.png" class="left white f" onclick="setVideo('F1.mov')"/> <!-- F -->
-			<img src="img/KeyBlack.png" class="black" onclick="setVideo('Jiyuu.mov')"/> <!-- F# -->
+		<img src="img/KeyRight.png" class="right white" onclick="setVideo('TNvqdR74KmA')"/> <!-- E -->
+		<img src="img/KeyLeft.png" class="left white f" onclick="setVideo('iipc4EsytYo')"/> <!-- F -->
+			<img src="img/KeyBlack.png" class="black" onclick="setVideo('McxEPy9d9WA')"/> <!-- F# -->
 		<img src="img/KeyMiddle.png" class="middle white" onclick="setVideo('test.mp4')"/> <!-- G -->
 			<img src="img/KeyBlack.png" class="black" onclick="setVideo('test2.mp4')"/>  <!-- G# -->
 		<img src="img/KeyMiddle.png" class="middle white" onclick="setVideo('test.mp4')"/> <!-- A -->
@@ -51,6 +89,19 @@
 		<img src="img/KeyRight.png" class="right white" onclick="setVideo('test.mp4')"/> <!-- E -->
 		<img src="img/KeyLeft.png" class="left white f" onclick="setVideo('test.mp4')"/> <!-- F -->
 			<img src="img/KeyBlack.png" class="black" onclick="setVideo('MarioTheme.mov')"/> <!-- F# -->
+		<img src="img/KeyMiddle.png" class="middle white" onclick="setVideo('test.mp4')"/> <!-- G -->
+			<img src="img/KeyBlack.png" class="black" onclick="setVideo('test2.mp4')"/>  <!-- G# -->
+		<img src="img/KeyMiddle.png" class="middle white" onclick="setVideo('test.mp4')"/> <!-- A -->
+			<img src="img/KeyBlack.png" class="black" onclick="setVideo('test2.mp4')"/> <!-- A# -->
+		<img src="img/KeyRight.png" class="right white" onclick="setVideo('test.mp4')"/> <!-- B -->
+
+		<img src="img/KeyLeft.png" class="left white c" onclick="setVideo('test.mp4')"/> <!-- C -->
+			<img src="img/KeyBlack.png" class="black" onclick="setVideo('test2.mp4')"/> <!-- C# -->
+		<img src="img/KeyMiddle.png" class="middle white" onclick="setVideo('test.mp4')"/> <!-- D -->
+			<img src="img/KeyBlack.png" class="black" onclick="setVideo('test2.mp4')"/> <!-- D# -->
+		<img src="img/KeyRight.png" class="right white" onclick="setVideo('test.mp4')"/> <!-- E -->
+		<img src="img/KeyLeft.png" class="left white f" onclick="setVideo('test.mp4')"/> <!-- F -->
+			<img src="img/KeyBlack.png" class="black" onclick="setVideo('test2.mp4')"/> <!-- F# -->
 		<img src="img/KeyMiddle.png" class="middle white" onclick="setVideo('test.mp4')"/> <!-- G -->
 			<img src="img/KeyBlack.png" class="black" onclick="setVideo('test2.mp4')"/>  <!-- G# -->
 		<img src="img/KeyMiddle.png" class="middle white" onclick="setVideo('test.mp4')"/> <!-- A -->

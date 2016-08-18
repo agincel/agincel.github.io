@@ -2,6 +2,16 @@ body {
 	background-color: skyblue;
 }
 
+.videoWrapper {
+}
+.videoWrapper iframe {
+	display: inline-block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 36vw;
+	height: 22vw;
+}
+
 #wrapper {
 	position: absolute; 
 	top: 0; 
@@ -42,7 +52,7 @@ body {
 }
 
 #piano {
-	width: 1920px; 
+	width: 1990px; 
 	height: 100%;
 	margin-left: 0;
 	overflow-x: auto;
@@ -52,9 +62,9 @@ body {
 .white {
 	position: relative;
 	height: 100%; 
-	width: 72px; 
+	width: 64px; 
 	float: left;
-	margin-left: -25px;
+	margin-left: -20px;
 	z-index: 10;
 }
 
@@ -65,8 +75,8 @@ body {
 .black {
 	position: relative;
 	height: 59%; 
-	width: 45px; 
-	margin-left: -25px; 
+	width: 36px; 
+	margin-left: -26px; 
 	margin-bottom: 50%; 
 	float: left;
 	z-index: 15;
@@ -74,4 +84,14 @@ body {
 
 .left {
 	
+}
+
+@media only screen and (max-width: 1000px) {
+	.videoWrapper iframe {
+		display: inline-block;
+		margin-left: auto;
+		margin-right: auto;
+		width: 75vw;
+		height: 42vw;
+	}
 }
