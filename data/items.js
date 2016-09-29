@@ -4,6 +4,16 @@ function getItems()
 		data: [
 			{
 				type: "Game",
+				title: "Tracks",
+				time: "SGDC Game Jam IX",
+				thumbnail: "./images/items/Tracks/thumb.png",
+				description: "An on-rails experience -- Candice is a new conductor, helping with shipments from Products Inc. Will she run into any trouble along the way, and will philosophy degree help her?",
+				screenshots: ["./images/items/Tracks/s1.gif", "./images/items/Tracks/s2.gif", "./images/items/Tracks/s3.gif"],
+				links: [{text: "Itch.io Page", link: "https://waveparadigm.itch.io/tracks"}, {text: "Play Online", link: "https://adamgincel.com/tracks"}],
+				shortName: "tracks",
+			},
+			{
+				type: "Game",
 				title: "Memory", 
 				time: "SGDC Game Jam VII",
 				thumbnail: "./images/items/Memory/thumb.png", 

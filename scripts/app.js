@@ -41,7 +41,7 @@ app.controller('PageController', ['$http', function($http) {
 				else {
 					this.desiredType = "Project";
 					if (this.selectedItem == 0)
-						this.selectedItem = 7;
+						this.selectedItem = 8;
 				}
 			}
 			if (newPageName != "")
@@ -60,7 +60,7 @@ app.controller('PageController', ['$http', function($http) {
 			if (this.value == 3)
 			{
 				this.desiredType = "Project";
-				this.selectedItem = 7;
+				this.selectedItem = 8;
 			}
 
 			for(var i = 0; i < this.navMembers.length; i++) { /* update page hash */
