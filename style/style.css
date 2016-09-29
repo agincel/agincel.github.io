@@ -1,6 +1,6 @@
 body {
 	background: #F7F7F7 url('../images/triangular.png') fixed;
-	padding-top: 70px;
+	padding-top: 0px;
 }
 
 .item-selected {
@@ -10,19 +10,40 @@ body {
 
 .navbar-custom {
 	background-image: none;
-	background-color: rgba(255, 255, 255, .98);
+	background-color: rgba(255, 255, 255, 0) !important;
 	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
-	padding-bottom: 0px;
 	border-radius: 0em;
+	-webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -o-box-shadow: none;
+    box-shadow: none;
 }
+
+.navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+
+.nav.navbar-nav li a {
+	color: black !important;
+    font-family: Helvetica, Arial, sans-serif !important;
+    font-size: 16px;
+}
+
+.navbar .navbar-collapse {
+  text-align: center;
+}
+
 
 .jumbotron-custom {
 	background-color: rgba(255, 255, 255, 0);
 	border-radius: 0em !important;
 	padding-top: 0px;
 	margin-top: 0px;
+	text-align: center;
 }
 
 .jumbotron-custom h1 {
@@ -34,6 +55,8 @@ body {
 .selected-image {
 	border: 2px solid black !important;
 }
+
+
 
 #displayed-item {
 	background-image: url('../images/displayed-item.png');
@@ -192,6 +215,15 @@ body {
 
 	#displayed-item-main-screenshot { 
 		width: 75%;
+	}
+
+	#logo-wrapper {
+		width: 100% !important;
+	}
+
+	#logo {
+		width: 80% !important;
+		height: auto !important;
 	}
 
 }

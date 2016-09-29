@@ -1,7 +1,7 @@
 <!-- Item Gallery -->
 <ul id="gallery-list">
 	<li ng-repeat="item in pgCtrl.items.data track by $index" ng-show="item.type === pgCtrl.desiredType">
-		<div ng-click="pgCtrl.setSelectedItem($index)" ng-class="{'item-selected': $index === pgCtrl.selectedItem}">
+		<div ng-click="pgCtrl.setSelectedItem($index)" ng-class="{'item-selected': $index === pgCtrl.selectedItem}" style="height: 128px;">
 			<h2>{{item.title}}</h2>
 			<img ng-src="{{item.thumbnail}}" style="width: 75%; margin-bottom: 10px;"></img>
 		</div>

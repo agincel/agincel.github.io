@@ -1,31 +1,42 @@
-<!-- Fixed Navbar -->
-<nav class="navbar navbar-default navbar-fixed-top navbar-custom">
-  <div class="container">
-    <div class="navbar-header">
-    	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="pull-left" style="font: normal 26px 'Yanone Kaffeesatz', arial, sans-serif; color: black; padding-left: 2%; padding-top: 3%; width: 100%; text-overflow: hidden;" href="http://adamgincel.com">
-        Adam</a>
+  <!-- Navbar -->
+
+    <div style="width: 100%;">
+      <div id="logo-wrapper" style="width: 500px; margin-left: auto; margin-right: auto;">
+        <a href="http://adamgincel.com">
+        <img src="./images/header.png" id="logo" />
+        </a>
+      </div>
     </div>
-    <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav navbar-right">
-          <li class="dropdown" ng-show="pgCtrl.dropdownMembers.length" ng-class="{active: pgCtrl.value >= 10}">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li ng-repeat="member in pgCtrl.dropdownMembers track by $index" ng-class="{'active': pgCtrl.value === $index}">
-              <a href="" ng-click="pgCtrl.setValue($index)">{{member}}</a>
+
+    <nav class="navbar navbar-default navbar-static-top navbar-custom">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav"> <!-- first, all normal navbar options -->
+            <li ng-repeat="member in pgCtrl.navMembers track by $index" 
+                ng-class="{'active': pgCtrl.value == $index}">
+                <a href="" ng-click="pgCtrl.setValue($index);"><strong>{{member}}</strong></a>
+            </li> 
+            <!-- next, if anyone changes dropdownMembers in page.js -->
+            <li class="dropdown" ng-show="pgCtrl.dropdownMembers.length">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li ng-repeat="member in pgCtrl.dropdownMembers track by $index" ng-class="{'active': pgCtrl.value === $index + pgCtrl.navMembers.length}">
+                  <a href="" ng-click="pgCtrl.setValue($index + pgCtrl.navMembers.length)">{{member.display}}</a>
+                </li>
+              </ul>
             </li>
           </ul>
-        </li>
-        <li ng-repeat="member in pgCtrl.navMembers track by $index" ng-class="{'active': pgCtrl.value === $index}"><a href="" ng-click="pgCtrl.setValue($index)"><strong>{{member}}</strong></a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+        </div>
+      </div>
+    </nav>
 
     <!-- 
     <li role="separator" class="divider"></li>
