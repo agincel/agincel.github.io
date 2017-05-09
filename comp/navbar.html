@@ -24,23 +24,7 @@
                 ng-class="{'active': pgCtrl.value == $index}">
                 <a href="" ng-click="pgCtrl.setValue($index);"><strong>{{member}}</strong></a>
             </li> 
-            <!-- next, if anyone changes dropdownMembers in page.js -->
-            <li class="dropdown" ng-show="pgCtrl.dropdownMembers.length">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li ng-repeat="member in pgCtrl.dropdownMembers track by $index" ng-class="{'active': pgCtrl.value === $index + pgCtrl.navMembers.length}">
-                  <a href="" ng-click="pgCtrl.setValue($index + pgCtrl.navMembers.length)">{{member.display}}</a>
-                </li>
-              </ul>
-            </li>
           </ul>
         </div>
       </div>
     </nav>
-
-    <!-- 
-    <li role="separator" class="divider"></li>
-    <li class="dropdown-header">Nav header</li>
-    <li><a href="#">Separated link</a></li>
-    <li><a href="#">One more separated link</a></li> 
-    -->

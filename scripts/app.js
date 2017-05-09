@@ -1,14 +1,12 @@
 var app = angular.module('page', []);
-var tryJson = false;
 
 app.controller('PageController', ['$http', function($http) {
 	this.value = 0;
 	this.selectedItem = 0;
 	this.selectedScreenshot = 0;
-	this.desiredType = "Game";
 
 
-	this.dropdownMembers = getNavbarDropdownMembers();
+	//this.dropdownMembers = getNavbarDropdownMembers();
 	this.navMembers = getNavbarMembers();
 
 	this.pageContents = getPageContents();
@@ -16,7 +14,7 @@ app.controller('PageController', ['$http', function($http) {
 
 	this.contactLinks = getContactLinks();
 
-	this.checkPage = function (){
+	this.checkPage = function (){ //run on page load, navigate to the proper place
 		var url = window.location.href;
 
 		var pieces = url.split("#");
@@ -36,13 +34,6 @@ app.controller('PageController', ['$http', function($http) {
 						}	
 					}
 				}
-				if (this.value == 1)
-					this.desiredType = "Game";
-				else {
-					this.desiredType = "Project";
-					if (this.selectedItem == 0)
-						this.selectedItem = 8;
-				}
 			}
 			if (newPageName != "")
 				window.location.hash = newPageName;
@@ -55,13 +46,6 @@ app.controller('PageController', ['$http', function($http) {
 			this.value = v;
 			this.selectedItem = 0;
 			this.selectedScreenshot = 0;
-			this.desiredType = "Game";
-
-			if (this.value == 3)
-			{
-				this.desiredType = "Project";
-				this.selectedItem = 8;
-			}
 
 			for(var i = 0; i < this.navMembers.length; i++) { /* update page hash */
 				if (v == i) 
