@@ -1,0 +1,108 @@
+<!doctype HTML>
+<html>
+
+<head>
+    <title>Dialog JSON Writer</title>
+
+    <script type="text/javascript" src="logic.js"></script>
+
+</head>
+
+<style>
+
+    body {
+        text-align: center;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    #result {
+        font-family: Courier New, Courier, monospace;
+    }
+
+    textarea {
+        height: 10vh;
+        width: 35vw;
+    }
+
+    .small {
+        font-size: 12px;
+    }
+
+    #desc {
+        width: 35vw;
+        margin: auto;
+        text-align: center;
+    }
+</style>
+
+<body onload="load()">
+
+    <h1>Dialog JSON Formatter</h1>
+    <p id="desc">Don't want to format JSON yourself? Use this handy website tool! Enter the metadata for this conversation below then add each line of dialog! Enter a name, portrait location, portrait sprite name (confirm that the name you enter exists), and actual text, then add it to the list! Download and send the file over when you're done.</p>
+
+    <br /><br />
+
+    <div id="meta">
+        <label>Dialog Type:</label>
+        <select id="type" onchange="typeChanged()">
+            <option value="plain" selected>Plain</option>
+            <option value="yesno">Yes/No</option>
+        </select>
+
+        <br /><br />
+
+        <label class="plainField">End Script: </label>
+        <input type="text" id="endScript" class="plainField" value="-1" />
+
+        <label class="yesnoField">Yes Filepath:</label>
+        <input type="text" id="yesPath" value="" class="yesnoField" />
+        <label class="yesnoField">No Filepath:</label>
+        <input type="text" id="noPath" value="" class="yesnoField" />
+
+        <br /><br />
+
+        <button onclick="confirmMetadata()">Confirm Metadata</button>
+    </div>
+
+    <div id="conv">
+        <label >Speaker Name: </label>
+        <input type="text"  id="name" />
+
+        <br /><br />
+
+        <label >Portrait Location: </label>
+        <select id="portraitType" >
+            <option value="left" selected>Left</option>
+            <option value="center">Center</option>
+            <option value="right">Right</option>
+            <option value="none">No Portrait</option>
+        </select>
+
+        <br /><br />
+
+        <label >Portrait Sprite Name: </label>
+        <input type="text"  id="portrait" />
+
+        <br /><br />
+
+        <label >Dialog: </label> <br />
+        <p class="small">"^1" .. "^9" = text delay. "^es" starts a shake, "^en" stops it. "^cw" sets text color to white (white by default), "^cb" sets it to blue. Other colors available upon request.</p>
+        <textarea  id="text"></textarea>
+
+        <br /><br />
+
+        <button onclick="addConv()">Add to Conversation</button> <br /><br />
+        <a id="dl" class="hidden">Download!</a>
+    </div>
+
+
+
+
+    <p id="result">No file preview yet</p>
+</body>
+
+
+</html>
