@@ -13,12 +13,16 @@ function typeChanged() {
     
     var plainFields = document.getElementsByClassName("plainField");
     var yesnoFields = document.getElementsByClassName("yesnoField");
+    var rewardFields = document.getElementsByClassName("rewardField");
     if (type == "plain") {
         for (var i = 0; i < plainFields.length; i++) {
             plainFields[i].classList.remove("hidden");
         }
         for (var i = 0; i < yesnoFields.length; i++) {
             yesnoFields[i].classList.add("hidden");
+        }
+        for (var i = 0; i < rewardFields.length; i++) {
+            rewardFields[i].classList.add("hidden");
         }
 
     } else if (type == "yesno") {
@@ -27,6 +31,19 @@ function typeChanged() {
         }
         for (var i = 0; i < yesnoFields.length; i++) {
             yesnoFields[i].classList.remove("hidden");
+        }
+        for (var i = 0; i < rewardFields.length; i++) {
+            rewardFields[i].classList.add("hidden");
+        }
+    } else if (type == "reward") {
+        for (var i = 0; i < plainFields.length; i++) {
+            plainFields[i].classList.add("hidden");
+        }
+        for (var i = 0; i < yesnoFields.length; i++) {
+            yesnoFields[i].classList.add("hidden");
+        }
+        for (var i = 0; i < rewardFields.length; i++) {
+            rewardFields[i].classList.remove("hidden");
         }
     }
 }
@@ -40,6 +57,9 @@ function confirmMetadata() {
     } else if (metadata.type == "yesno") {
         metadata.yesPath = document.getElementById("yesPath").value;
         metadata.noPath = document.getElementById("noPath").value;
+    } else if (metadata.type == "reward") {
+        metadata.rewardType = document.getElementById("rewardType").value;
+        metadata.rewardParameter = document.getElementById("rewardParameter").value;
     }
 
     result.push(metadata);
