@@ -4,7 +4,28 @@
     <title>FantasyGen</title>
 </head>
 
+<style>
+	main {
+		width: 80%;
+		margin: auto;
+		background-color: khaki;
+		text-align: center;
+		font-family: Arial;
+		font-size: 18px;
+		padding: 10px;
+	}
+	body {
+		background-color: brown;
+	}
+	button {
+		width: 100px;
+		height: 75px;
+	}
+</style>
+
+
 <body>
+	<main>
     <h1>Welcome to FantasyGen</h1>
     <p>FantasyGen is a Fantasy Football Draft Team generator made for FE530 by Adam Gincel, Robert, Brian, and Pia Om.</p>
 
@@ -15,10 +36,10 @@
     <br />
 
     <h2>Best Result</h2>
-    <textarea id="results" style="width: 400px; height: 200px" disabled></textarea>
+    <textarea id="results" style="width: 40%; height: 200px; min-width: 200px" disabled></textarea>
 
     <h2>Data</h2>
-    <textarea id="inputData" style="width: 900px; height: 500px">
+    <textarea id="inputData" style="width: 90%; height: 500px">
 "Position","Name","Salary","GameInfo","AvgPointsPerGame","teamAbbrev"
 "WR","DeAndre Hopkins",9200,"IND@HOU 11/05/2017 01:00PM ET",21.943,"HOU"
 "RB","Ezekiel Elliott",9000,"KC@DAL 11/05/2017 04:25PM ET",24.000,"DAL"
@@ -378,6 +399,8 @@
 "DST","Buccaneers ",2100,"TB@NO 11/05/2017 01:00PM ET",5.571,"TB"
 "DST","Colts ",2000,"IND@HOU 11/05/2017 01:00PM ET",6.250,"IND"            
     </textarea>
+    <footer><p>Webpage (c) Adam Gincel 2017</p></footer>
+	</main>
 </body>
 
 <script>
