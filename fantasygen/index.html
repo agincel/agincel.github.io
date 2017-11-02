@@ -436,6 +436,7 @@ function makeTeam(t, QB, RB, WR, TE) {
             var tp = getTeamPrice(t);
             var tpo = getTeamPoints(t);
             ret += "Team price: $" + tp + "\n";
+            ret += "Team points: " + tpo + "\n";
             ret += "Team's Points per Dollar: " + (tpo / tp);
 
             return ret;
@@ -501,8 +502,9 @@ function makeTeam(t, QB, RB, WR, TE) {
             wrC: 2,
             te: 0,
         }
-        teams = [];
-        
+        var teams = [];
+        const budget = document.getElementById("budget").value;
+        console.log(budget);
         for (var i = 0; i < perms; i++) {
             console.log("Making team indices for team " + i);
             
@@ -518,7 +520,6 @@ function makeTeam(t, QB, RB, WR, TE) {
             console.log("Making team");
             var team = makeTeam(teamI, QB, RB, WR, TE);
 
-            const budget = 47500;
             console.log("Generating valid team...");
             while (getTeamPrice(team) > budget) {
                 var rng = Math.random();
