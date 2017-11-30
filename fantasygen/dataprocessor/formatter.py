@@ -50,7 +50,7 @@ print(rushing[0])
 
 print("Initializing user dictionaries")
 for player in players:
-    results[player[1]] = [player[0], player[1], player[2], player[4], 0, 0, 0, 0, 0, 0, 0, 0]
+    results[player[1]] = [player[0], player[1], player[2], player[4], 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
 for passed in passing:
     if passed[1] in results:
@@ -74,7 +74,9 @@ with open('output.csv', 'w') as csvfile:
         for date, usage in di.items():
             csvfile.write(user + ", " + date + ", " + str(usage['cognos_usage']) + ", " + str(usage['report_viewer_usage']) + ", " + str(usage['query_team_usage']) + "\n")'''
     for key, player in results.items():
-        csvfile.write(player[0] + "," + player[1] + "," + str(player[2]) + "," + str(player[3]) + "," + str(player[4]) + "," + str(player[5]) + "," + str(player[6]) + "," + str(player[7]) + "," + str(player[8]) + "," + str(player[9]) + "," + str(player[10]) + "," + str(player[11]) + "\n")
+        if (player[11] == ""):
+            player[11] = 0
+        csvfile.write("\"" + player[0] + "\",\"" + player[1] + "\"," + str(player[2]) + "," + str(player[3]) + "," + str(player[4]) + "," + str(player[5]) + "," + str(player[6]) + "," + str(player[7]) + "," + str(player[8]) + "," + str(player[9]) + "," + str(player[10]) + "," + str(player[11]) + "\n")
     csvfile.close()
 
 print("wrote to output.csv")
