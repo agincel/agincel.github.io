@@ -41,7 +41,7 @@
 <body onload="load()">
 
     <h1>Dialog JSON Formatter</h1>
-    <p id="desc">Don't want to format JSON yourself? Use this handy website tool! Enter the metadata for this conversation below then add each line of dialog! Enter a name, portrait location, portrait sprite name (confirm that the name you enter exists), and actual text, then add it to the list! Download and send the file over when you're done.</p>
+    <p id="desc">Making dialog for a project using my textbox tool? Use this!</p>
 
     <br /><br />
 
@@ -50,31 +50,58 @@
         <select id="type" onchange="typeChanged()">
             <option value="plain" selected>Plain</option>
             <option value="yesno">Yes/No</option>
-            <option value="reward">Reward (BPd)</option>
+            <option value="choice">Choice</option>
         </select>
 
         <br /><br />
+        <label>Text Wait (the higher this number the slower the text. Default is 2):</label>
+        <input type="text" value="2" id="textWait" />
 
-        <label class="plainField">End Script: </label>
-        <input type="text" id="endScript" class="plainField" value="-1" />
+        <br /><br />
 
-        <label class="yesnoField">Yes Filepath:</label>
-        <input type="text" id="yesPath" value="" class="yesnoField" />
-        <label class="yesnoField">No Filepath:</label>
-        <input type="text" id="noPath" value="" class="yesnoField" />
+        <label class="plainField">End File (json to run after this one): </label>
+        <input type="text" id="endFile" class="plainField" value="-1" /><br class="plainField" />
+        <label class="plainField">End Script (ingame script to run after this dialog): </label>
+        <input type="text" id="endScript" class="plainField" value="-1" /><br class="plainField" />
 
-        <label class="rewardField">Reward Type</label>
-        <select id="rewardType" class="rewardField">
-        	<option value="money">Money (int)</option>
-        	<option value="pdb">Palladium (int)</option>
-        	<option value="item">Item (int)</option>
-            <option value="interest">Interest</option>
-        	<option value="marketslight">Market Adjustment (int)</option>
-        	<option value="market">Market Rewrite (0 - 5)</option>
-        </select>
+        <label class="yesnoField">Yes File:</label>
+        <input type="text" id="yesFile" value="-1" class="yesnoField" /><br class="yesnoField"/>
+        <label class="yesnoField">Yes Script:</label>
+        <input type="text" id="yesScript" value="-1" class="yesnoField" /><br class="yesnoField"/>
 
-        <label class="rewardField">Reward Parameter</label>
-        <input type="text" id="rewardParameter" class="rewardField" />
+
+        <label class="yesnoField">No File:</label>
+        <input type="text" id="noFile" value="-1" class="yesnoField" /><br  class="yesnoField"/>
+        <label class="yesnoField">No Script:</label>
+        <input type="text" id="noScript" value="-1" class="yesnoField" /><br  class="yesnoField"/>
+
+        <label class="choiceField">Choice 1:</label>
+        <input type="text" id="choice1" value="-1" class="choiceField" /><br class="choiceField"/>
+        <label class="choiceField">Choice 1 File:</label>
+        <input type="text" id="choice1file" value="-1" class="choiceField" /><br class="choiceField"/>
+        <label class="choiceField">Choice 1 Script:</label>
+        <input type="text" id="choice1script" value="-1" class="choiceField" /><br class="choiceField"/>
+
+        <label class="choiceField">Choice 2:</label>
+        <input type="text" id="choice2" value="-1" class="choiceField" /><br class="choiceField"/>
+        <label class="choiceField">Choice 2 File:</label>
+        <input type="text" id="choice2file" value="-1" class="choiceField" /><br class="choiceField"/>
+        <label class="choiceField">Choice 2 Script:</label>
+        <input type="text" id="choice2script" value="-1" class="choiceField" /><br class="choiceField"/>
+
+        <label class="choiceField">Choice 3:</label>
+        <input type="text" id="choice3" value="-1" class="choiceField" /><br class="choiceField"/>
+        <label class="choiceField">Choice 3 File:</label>
+        <input type="text" id="choice3file" value="-1" class="choiceField" /><br class="choiceField"/>
+        <label class="choiceField">Choice 3 Script:</label>
+        <input type="text" id="choice3script" value="-1" class="choiceField" /><br class="choiceField"/>
+
+        <label class="choiceField">Choice 4:</label>
+        <input type="text" id="choice4" value="-1" class="choiceField" /><br class="choiceField"/>
+        <label class="choiceField">Choice 4 File:</label>
+        <input type="text" id="choice4file" value="-1" class="choiceField" /><br class="choiceField"/>
+        <label class="choiceField">Choice 4 Script:</label>
+        <input type="text" id="choice4script" value="-1" class="choiceField" /><br class="choiceField"/>
 
         <br /><br />
 
@@ -98,12 +125,17 @@
         <br /><br />
 
         <label >Portrait Sprite Name: </label>
-        <input type="text"  id="portrait" />
+        <input type="text" value="-1" id="portrait" />
 
         <br /><br />
 
+
+
+        <br /><br />
+
+
         <label >Dialog: </label> <br />
-        <p class="small">"^1" .. "^9" = text delay. "^es" starts a shake, "^en" stops it. "^cw" sets text color to white (white by default), "^cb" sets it to blue. Other colors available upon request.</p>
+        <p class="small">"^1" .. "^9" = text delay.</p>
         <textarea  id="text"></textarea>
 
         <br /><br />
