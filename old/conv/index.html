@@ -1,0 +1,154 @@
+<!doctype HTML>
+<html>
+
+<head>
+    <title>Dialog JSON Writer</title>
+
+    <script type="text/javascript" src="logic.js"></script>
+
+</head>
+
+<style>
+
+    body {
+        text-align: center;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    #result {
+        font-family: "Courier New", Courier, monospace;
+    }
+
+    textarea {
+        height: 10vh;
+        width: 35vw;
+    }
+
+    .small {
+        font-size: 12px;
+    }
+
+    #desc {
+        width: 35vw;
+        margin: auto;
+        text-align: center;
+    }
+</style>
+
+<body onload="load()">
+
+    <h1>Dialog JSON Formatter</h1>
+    <p id="desc">Making dialog for a project using my textbox tool? Use this!</p>
+
+    <br /><br />
+
+    <div id="meta">
+        <label>Dialog Type:</label>
+        <select id="type" onchange="typeChanged()">
+            <option value="plain" selected>Plain</option>
+            <option value="yesno">Yes/No</option>
+            <option value="choice">Choice</option>
+        </select>
+
+        <br /><br />
+        <label>Text Wait (the higher this number the slower the text. Default is 2):</label>
+        <input type="text" value="2" id="textWait" />
+
+        <br /><br />
+
+        <label class="plainField">End File (json to run after this one): </label>
+        <input type="text" id="endFile" class="plainField" value="-1" /><br class="plainField" />
+        <label class="plainField">End Script (ingame script to run after this dialog): </label>
+        <input type="text" id="endScript" class="plainField" value="-1" /><br class="plainField" />
+
+        <label class="yesnoField">Yes File:</label>
+        <input type="text" id="yesFile" value="-1" class="yesnoField" /><br class="yesnoField"/>
+        <label class="yesnoField">Yes Script:</label>
+        <input type="text" id="yesScript" value="-1" class="yesnoField" /><br class="yesnoField"/>
+
+
+        <label class="yesnoField">No File:</label>
+        <input type="text" id="noFile" value="-1" class="yesnoField" /><br  class="yesnoField"/>
+        <label class="yesnoField">No Script:</label>
+        <input type="text" id="noScript" value="-1" class="yesnoField" /><br  class="yesnoField"/>
+
+        <label class="choiceField">Choice 1:</label>
+        <input type="text" id="choice1" value="-1" class="choiceField" /><br class="choiceField"/>
+        <label class="choiceField">Choice 1 File:</label>
+        <input type="text" id="choice1file" value="-1" class="choiceField" /><br class="choiceField"/>
+        <label class="choiceField">Choice 1 Script:</label>
+        <input type="text" id="choice1script" value="-1" class="choiceField" /><br class="choiceField"/>
+
+        <label class="choiceField">Choice 2:</label>
+        <input type="text" id="choice2" value="-1" class="choiceField" /><br class="choiceField"/>
+        <label class="choiceField">Choice 2 File:</label>
+        <input type="text" id="choice2file" value="-1" class="choiceField" /><br class="choiceField"/>
+        <label class="choiceField">Choice 2 Script:</label>
+        <input type="text" id="choice2script" value="-1" class="choiceField" /><br class="choiceField"/>
+
+        <label class="choiceField">Choice 3:</label>
+        <input type="text" id="choice3" value="-1" class="choiceField" /><br class="choiceField"/>
+        <label class="choiceField">Choice 3 File:</label>
+        <input type="text" id="choice3file" value="-1" class="choiceField" /><br class="choiceField"/>
+        <label class="choiceField">Choice 3 Script:</label>
+        <input type="text" id="choice3script" value="-1" class="choiceField" /><br class="choiceField"/>
+
+        <label class="choiceField">Choice 4:</label>
+        <input type="text" id="choice4" value="-1" class="choiceField" /><br class="choiceField"/>
+        <label class="choiceField">Choice 4 File:</label>
+        <input type="text" id="choice4file" value="-1" class="choiceField" /><br class="choiceField"/>
+        <label class="choiceField">Choice 4 Script:</label>
+        <input type="text" id="choice4script" value="-1" class="choiceField" /><br class="choiceField"/>
+
+        <br /><br />
+
+        <button onclick="confirmMetadata()">Confirm Metadata</button>
+    </div>
+
+    <div id="conv">
+        <label >Speaker Name: </label>
+        <input type="text"  id="name" />
+
+        <br /><br />
+
+        <label >Portrait Location: </label>
+        <select id="portraitType" >
+            <option value="left" selected>Left</option>
+            <option value="center">Center</option>
+            <option value="right">Right</option>
+            <option value="none">No Portrait</option>
+        </select>
+
+        <br /><br />
+
+        <label >Portrait Sprite Name: </label>
+        <input type="text" value="-1" id="portrait" />
+
+        <br /><br />
+
+
+
+        <br /><br />
+
+
+        <label >Dialog: </label> <br />
+        <p class="small">"^1" .. "^9" = text delay.</p>
+        <textarea  id="text"></textarea>
+
+        <br /><br />
+
+        <button onclick="addConv()">Add to Conversation</button> <br /><br />
+        <a id="dl" class="hidden">Download!</a>
+    </div>
+
+
+
+
+    <p id="result">No file preview yet</p>
+</body>
+
+
+</html>

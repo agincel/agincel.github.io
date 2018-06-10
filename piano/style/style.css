@@ -45,7 +45,7 @@ body {
 #pianoWrapper {
 	position: absolute;
 	top: 50%;
-	left: 0;
+	left: 10%;
 	width: 100vw;
 	height: 50%;
 	overflow-x: scroll;
@@ -62,9 +62,9 @@ body {
 .white {
 	position: relative;
 	height: 100%; 
-	width: 64px; 
+	width: 74px; 
 	float: left;
-	margin-left: -20px;
+	margin-left: -30px;
 	z-index: 10;
 }
 
@@ -75,7 +75,7 @@ body {
 .black {
 	position: relative;
 	height: 59%; 
-	width: 36px; 
+	width: 50px; 
 	margin-left: -26px; 
 	margin-bottom: 50%; 
 	float: left;
@@ -85,13 +85,9 @@ body {
 .left {
 	
 }
-/*
-@media only screen and (max-width: 1000px) {
-	.videoWrapper iframe {
-		display: inline-block;
-		margin-left: auto;
-		margin-right: auto;
-		width: 50vw;
-		height: 26vw;
+
+@media only screen and (max-width: 1725px) {
+	#pianoWrapper {
+		left: 0;
 	}
-}*/
+}

@@ -1,0 +1,368 @@
+html, body {
+	height: 100%;
+}
+
+body {
+	background-image: url("../img/bg.png");
+	background-repeat: repeat;
+}
+
+main {
+	display: block;
+
+	width: 60%;
+	border: 2px gray solid;
+	border-radius: 5px;
+	margin: auto;
+	background-color: #ededed;
+
+	text-align: center;
+	color: black;
+
+	font-size: 22px;
+	font-family: "latolight", sans-serif;
+}
+
+.show {
+	display: inline-block !important;
+}
+
+main h1 {
+	margin-bottom: 0px;
+}
+
+main button {
+	background-color: gray;
+	font-family: "latolight", sans-serif;
+	box-shadow: none;
+	border: none;
+	border-radius: 5px;
+
+	width: auto;
+	height: auto;
+	color: white;
+
+	font-size: 20px;
+	padding: 15px;
+}
+
+main p {
+	padding: 12px;
+}
+
+main ul {
+	text-align: left;
+	font-size: 18px;
+	width: 95%;
+}
+
+main ul li {
+	margin-bottom: 8px;
+}
+
+nav {
+	width: 60%;
+	margin: auto;
+	height: 128px;
+
+	font-size: 20px;
+	font-family: "latolight", sans-serif;
+	font-weight: bold;
+
+	text-align: right;
+}
+
+#navButton {
+	display: none;
+	background-color: #eee;
+	margin-left: 70vw;
+}
+
+#navButton:hover {
+	background-color: #ddd;
+}
+
+#navButton:active {
+	background: #ccc;
+}
+
+#navButton:focus {
+	background: #dcdcdc;
+}
+
+.navHolder {
+	height: 128px;
+	width: auto;
+	display: block;
+	padding-top: 7%;
+}
+
+.navSelected {
+	font-weight: bolder;
+}
+
+#gifTitle {
+	font-style: italic;
+	padding-bottom: 8px;
+	display: inline-block;
+	font-size: 18px;
+}
+
+.indicator {
+	height: 12px;
+	width: 12px;
+	border: 1px solid gray;
+	border-radius: 2em;
+	display: inline-block;
+	margin-right: 3px;
+	margin-bottom: 5px;
+}
+
+.active {
+	background-color: white;
+}
+
+nav ul {
+	list-style: none;
+	display: inline;
+}
+
+nav ul li {
+	display: inline;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+nav ul li a {
+	color: black;
+	text-decoration: none;
+}
+
+.logo {
+	height: 128px;
+	width: auto;
+	float: left;
+}
+
+.left {
+	text-align: left;
+	padding-left: 28px;
+}
+
+#social img {
+	height: 100px;
+	width: auto;
+	padding-bottom: 20px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+main a {
+	color: #022E3F;
+}
+
+.date {
+	font-style: italic;
+	font-size: 14px;
+	display: inline;
+	margin: 0px;
+	padding: 0px;
+	margin-right: 10px;
+
+}
+
+
+.game {
+	border: 1px gray solid;
+	width: 65% !important;
+	display: inline-block;
+	background-color: #e4e4e4;
+	color: black;
+	text-align: left;
+
+	height: auto;
+
+	padding-bottom: 10px;
+	border-radius: 5px;
+}
+
+.game section {
+	float: left;
+	width: 65%;
+	border-left: 1px lightgray solid;
+	padding-left: 20px;
+	height: 100%;
+	padding-right: 4%;
+}
+
+.game img {
+	height: auto;
+	width: 24%;
+
+	max-height: 90%;
+	float: left;
+	margin: 10px;
+}
+
+.game h1 {
+	font-size: 26px;
+}
+
+.game p {
+	padding: 0;
+	font-size: 14px;
+}
+
+.game p a {
+	font-size: 15px;
+}
+
+.game a {
+	color: indianred;
+	font-size: 20px;
+}
+
+@media only screen and (max-width: 1750px) {
+	nav {
+		width: 75% !important;
+		font-size: 20px;
+	}
+
+	.navHolder {
+		padding-top: 5.5%;
+	}
+
+	main {
+		width: 75% !important;
+	}
+
+}
+
+@media only screen and (max-width: 1550px) {
+	nav {
+		width: 95% !important;
+		font-size: 20px;
+	}
+
+	.navHolder {
+		padding-top: 4.5%;
+	}
+
+	main {
+		width: 95% !important;
+	}
+
+	.game {
+		width: 65% !important;
+	}
+
+	.game section {
+		width: 60%;
+		padding-right: 10%;
+	}
+}
+
+@media only screen and (max-width: 1165px) {
+	nav {
+		width: 100%;
+		height: auto;
+		text-align: center;
+
+		font-size: 18px;
+		padding-bottom: 7px;
+	}
+
+	#navButton {
+		display: inline;
+	}
+
+	nav ul {
+		display: block;
+		margin: 0;
+		padding: 0;
+	}
+
+
+	nav ul li{
+		display: block;
+		padding-top: 5px;
+		padding-bottom: 5px;
+	}
+
+	.logo {
+		width: 100%;
+		height: auto;
+	}
+
+	.navHolder {
+		width: 100%;
+		display: none;
+		padding: 0;
+	}
+
+	.game {
+		width: 90% !important;
+		height: auto;
+	}
+
+	.game section {
+		width: 50%;
+		height: 100%;
+	}
+
+	.game img {
+		width: 30%;
+		height: auto;
+		padding-top: 10px;
+	}
+
+	#gfy {
+		width: 75%;
+		height: auto;
+	}
+
+	main ul {
+		width: 85%;
+	}
+
+	main {
+		font-size: 14px;
+	}
+
+	#social img {
+		height: 50px;
+		padding-left: 4px;
+		padding-right: 4px;
+		padding-bottom: 6px;
+	}
+}
+
+@media only screen and (max-width: 800px) {
+	.game {
+		text-align: center;
+		padding: 10px;
+		margin-bottom: 10px;
+	}
+
+	.game img {
+		display: inline-block;
+		height: 128px;
+		width: auto;
+	}
+
+	.imagewrapper {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+	}
+
+	.game section {
+		width: 100%;
+		padding-left: 0px;
+		border: none;
+	}
+
+	.left {
+		padding-left: 4px;
+	}
+}

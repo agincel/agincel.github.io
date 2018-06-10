@@ -1,54 +1,66 @@
-<!DOCTYPE HTML>
-<html>
-
+<!doctype html>
+<html ng-app="page" stu;e="height: 100%">
 <head>
-  <title>Adam Gincel</title>
-  <meta name="description" content="Adam Gincel's website." />
-  <meta name="keywords" content="website keywords, website keywords" />
-  <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Tangerine&amp;v1" />
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" />
-  <link rel="stylesheet" type="text/css" href="style/style.css" />
-  <link rel="shortcut icon" href="images/logo.png" />
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.min.js"></script>
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+
+	<!-- Bootstrap CDN -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+	<!-- My Stylesheets -->
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Tangerine&amp;v1" />
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" />
+	<link rel="stylesheet" type="text/css" href="./style/style.css" />
+
+	<!-- My Data -->
+	<script src="./data/items.js"></script>
+	<script src="./data/page.js"></script>
+	<script src="./data/contact.js"></script>
+	
+	<!-- My Scripts -->
+	<script src="./scripts/app.js"></script>
+
+	<title>Adam Gincel</title>
+	<meta name="description" content="Adam Gincel's website." />
+	<link rel="shortcut icon" href="images/logo.png" />
+
 </head>
 
-<body>
-  <div id="main">
-    <div id="header">
+<body ng-controller="PageController as pgCtrl" ng-init="pgCtrl.checkPage();">
+	<navbar></navbar>
 
-      <div id="logo">
-        <h1>Adam Gincel</h1>
-      </div>
+    <div class="container">
+      <jumbotron></jumbotron>
+    </div> <!-- /container -->
 
-            <div id="menubar">
-              <ul id="menu">
-                <!-- put class="current" in the li tag for the selected page - to highlight which page you're on -->
-                <li class="current"><a href="index.html">Home</a></li>
-                <li><a href="games.html">Games</a></li>
-                <li><a href="music.html">Music</a></li>
-                <li><a href="programming.html">Programming</a></li>
-                <li><a href="contact.html">Contact Me</a></li>
-              </ul>
-            </div>
-
-    </div>
-    <br />
-    <div id="site_content">
-      <div id="sidebar_container">
-        <div class="sidebar">
-          <!-- insert your sidebar items here -->
-          <h3>Games, Music, and Projects Updated!</h3>
-          <h4>A bunch of content.</h4>
-          <h5>20th October 2015</h5>
-          <p>6 games, 3 albums, and 3 programming projects have been featured. Check them out!<br /><a href="#"></a></p>
-        </div>
-      </div>
-      <div id="content">
-        <!-- insert the page content here -->
-        <h1>Adam Gincel's Repository</h1>
-        <p>I am Adam Gincel, a sophomore Computer Science major attending Stevens Institute of Technology. I program, write music, and make games. This website is a repository for some of my work, and I will update it with links to projects over time. Thank you for visiting!</p>
-      </div>
-    </div>
-  </div>
 </body>
+
+
+
+<script type="text/javascript">
+//close dropdown on click anywhere
+$(document).on('click',function(){
+	$('.collapse').collapse('hide');
+})
+</script>
+
+<script>
+	//Google Analytics
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-80139710-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
 </html>

@@ -1,0 +1,9 @@
+<!-- Item Gallery -->
+<ul id="gallery-list">
+	<li ng-repeat="item in pgCtrl.items.data track by $index">
+		<div ng-click="pgCtrl.setSelectedItem($index)" ng-class="{'item-selected': $index === pgCtrl.selectedItem}">
+			<h2>{{item.title}}</h2>
+			<img ng-src="{{item.thumbnail}}" style="width: 75%; margin-bottom: 10px;"></img>
+		</div>
+	</li>
+</ul>
