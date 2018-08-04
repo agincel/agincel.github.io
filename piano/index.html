@@ -17,14 +17,18 @@
       // 3. This function creates an <iframe> (and YouTube player)
       //    after the API code downloads.
 		var player;
+		var currentVideoID = "OZzbXEqXMnI";
 		function onYouTubeIframeAPIReady() {
 				player = new YT.Player('player', {
 				width: "360",
 				height: "240",
-				videoId: 'OZzbXEqXMnI',
+				videoId: currentVideoID,
 				events: {
 					'onReady': onPlayerReady,
 					'onStateChange': onPlayerStateChange
+				},
+				playerVars: {
+					rel: 0
 				}
 			});
 		}
@@ -37,20 +41,20 @@
       // 5. The API calls this function when the player's state changes.
       //    The function indicates that when playing a video (state=1),
       //    the player should play for six seconds and then stop.
-		var done = false;
 		function onPlayerStateChange(event) {
-			if (event.data == YT.PlayerState.PLAYING && !done) {
-				//setTimeout(stopVideo, 6000);
-				done = true;
-			}
+			//if (event.data == YT.PlayerState.ENDED) {
+			//	setVideo(currentVideoID);
+			//}
 		}
 		function stopVideo() {
 			player.stopVideo();
 		}
 
 		function setVideo (name) {
-			if (name)
-				player.loadVideoById(name, 0, 'small');
+			if (name) {
+				currentVideoID = name;
+				player.loadVideoById(currentVideoID, 0, 'small');
+			}
 		}
 	</script>
 
@@ -71,7 +75,7 @@
 	<div id="pianoWrapper">
 	<section id="piano">
 			<img src="img/KeyBlack.png" class="black" onclick="setVideo('')"/> <!-- A# -->
-		<img src="img/KeyRight.png" class="right white" onclick="setVideo('')"/> <!-- B -->
+		<img src="img/KeyRight.png" class="right white" onclick="setVideo('yGy5tjQuZ2I')"/> <!-- B -->
 		<img src="img/KeyLeft.png" class="left white c" onclick="setVideo('J4B4_UdqKGQ')"/> <!-- C -->
 			<img src="img/KeyBlack.png" class="black" onclick="setVideo('dB8Ft6ooL2Y')"/> <!-- C# -->
 		<img src="img/KeyMiddle.png" class="middle white" onclick="setVideo('OZzbXEqXMnI')"/> <!-- D -->
@@ -80,7 +84,7 @@
 		<img src="img/KeyLeft.png" class="left white f" onclick="setVideo('iipc4EsytYo')"/> <!-- F -->
 			<img src="img/KeyBlack.png" class="black" onclick="setVideo('McxEPy9d9WA')"/> <!-- F# -->
 		<img src="img/KeyMiddle.png" class="middle white" onclick="setVideo('i3mAmRoK7Lk')"/> <!-- G -->
-			<img src="img/KeyBlack.png" class="black" onclick="setVideo('')"/>  <!-- G# -->
+			<img src="img/KeyBlack.png" class="black" onclick="setVideo('dB8Ft6ooL2Y')"/>  <!-- G# -->
 		<img src="img/KeyMiddle.png" class="middle white" onclick="setVideo('illAmMk0Xkk')"/> <!-- A -->
 			<img src="img/KeyBlack.png" class="black" onclick="setVideo('SfoIBD6fj6k')"/> <!-- A# -->
 		<img src="img/KeyRight.png" class="right white" onclick="setVideo('ZiIgPdkFXws')"/> <!-- B -->
@@ -96,7 +100,7 @@
 			<img src="img/KeyBlack.png" class="black" onclick="setVideo('')"/>  <!-- G# -->
 		<img src="img/KeyMiddle.png" class="middle white" onclick="setVideo('')"/> <!-- A -->
 			<img src="img/KeyBlack.png" class="black" onclick="setVideo('')"/> <!-- A# -->
-		<img src="img/KeyRight.png" class="right white" onclick="setVideo('')"/> <!-- B -->
+		<img src="img/KeyRight.png" class="right white" onclick="setVideo('oi6AHUxUh7g')"/> <!-- B -->
 
 		<img src="img/KeyLeft.png" class="left white c" onclick="setVideo('')"/> <!-- C -->
 			<img src="img/KeyBlack.png" class="black" onclick="setVideo('')"/> <!-- C# -->
